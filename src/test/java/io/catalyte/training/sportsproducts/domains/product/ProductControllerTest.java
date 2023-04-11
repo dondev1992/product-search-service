@@ -40,7 +40,7 @@ public class ProductControllerTest {
   @Before
   public void before() {
     mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-    product = new Product(BigDecimal.ONE, "a", "a", Men, "a", "a", "a");
+    product = new Product(BigDecimal.ONE, "a", "a", "a", "a", "a", "a");
     product = productRepository.save(product);
   }
 

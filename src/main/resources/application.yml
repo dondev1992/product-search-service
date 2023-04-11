@@ -11,7 +11,17 @@ spring:
       ddl-auto: create-drop
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: root
+#    url: jdbc:postgresql://localhost:5432/postgres
+#    username: postgres
+#    password: root
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driverClassName: org.postgresql.Driver
+#
+#    url: jdbc:postgresql://ec2-3-216-129-140.compute-1.amazonaws.com:5432/d1pte1hfk6sta0?sslmode=require&user=phaqjgxxpktjyn&password=b126941830d17616835a5ae85a582781f1c0582702c4dda57db24fdb735a805d
+#    username: phaqjgxxpktjyn
+#    password: b126941830d17616835a5ae85a582781f1c0582702c4dda57db24fdb735a805d
+
+
+#postgres://lhkqkxzrpglasn:a3fed5c0bb22f99e14ecc7dd7ad912d12bba549d415ce1a739cf1a4eabb62c22@ec2-54-234-44-238:compute-1:amazonaws:com:5432/dlvf1qt0ckjfk

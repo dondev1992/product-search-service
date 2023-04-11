@@ -1,6 +1,5 @@
 package io.catalyte.training.sportsproducts.data;
 
-import io.catalyte.training.sportsproducts.domains.product.Demographic;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
@@ -79,10 +78,15 @@ public class Generators {
       "Pool Noodle"
   };
 
-  public static Demographic getDemographic() {
+  private static final String[] demographics = {
+      "Men",
+      "Women",
+      "Kids"
+  };
+
+  public static String getDemographic() {
     Random randomGenerator = new Random();
-    int x = randomGenerator.nextInt(Demographic.class.getEnumConstants().length);
-    return Demographic.class.getEnumConstants()[x];
+    return demographics[randomGenerator.nextInt(demographics.length)];
   }
 
   public static String getType() {

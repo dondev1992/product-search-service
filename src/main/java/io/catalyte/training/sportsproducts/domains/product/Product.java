@@ -26,8 +26,8 @@ public class Product {
   @NotBlank
   private String description;
 
-  @Enumerated(value = EnumType.STRING)
-  private Demographic demographic;
+  @NotBlank
+  private String demographic;
 
   @NotBlank
   private String category;
@@ -51,7 +51,7 @@ public class Product {
 
   public Product(@NotNull BigDecimal price,
       @NotBlank String name, @NotBlank String description,
-      Demographic demographic, @NotBlank String category,
+      String demographic, @NotBlank String category,
       @NotBlank String type, @NotBlank String releaseDate) {
     this.price = price;
     this.name = name;
@@ -94,11 +94,11 @@ public class Product {
     this.description = description;
   }
 
-  public Demographic getDemographic() {
+  public String getDemographic() {
     return demographic;
   }
 
-  public void setDemographic(Demographic demographic) {
+  public void setDemographic(String demographic) {
     this.demographic = demographic;
   }
 

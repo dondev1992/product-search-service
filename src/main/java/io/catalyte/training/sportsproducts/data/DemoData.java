@@ -47,7 +47,7 @@ public class DemoData implements CommandLineRunner {
     String category = Generators.getCategory();
     String adjective = Generators.getAdjective();
     String type = Generators.getType();
-    Demographic demographic = Generators.getDemographic();
+    String demographic = Generators.getDemographic();
 
     product.setPrice(Generators.getPrice());
     product.setDescription("This " + category.toLowerCase() + SPACE
