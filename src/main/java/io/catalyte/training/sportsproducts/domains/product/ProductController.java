@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/v1/products")
+@RequestMapping(value = "/products")
 public class ProductController {
 
   @Autowired
@@ -40,7 +40,8 @@ public class ProductController {
 
   @GetMapping(value = "/types/newest")
   @ResponseStatus(value = HttpStatus.OK)
-  public ResponseEntity<List<Product>> getNewestByType(@RequestParam(required=false) String demographic, @RequestParam(required=false) String category, @RequestParam(required=false) String type) {
+  public ResponseEntity<List<Product>> getNewestByType(@RequestParam(required = false) String demographic,
+      @RequestParam(required = false) String category, @RequestParam(required = false) String type) {
     return new ResponseEntity<>(productService.findNewestByAll(demographic, category, type), HttpStatus.OK);
   }
 
