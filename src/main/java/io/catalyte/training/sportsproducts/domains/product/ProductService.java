@@ -12,4 +12,6 @@ public interface ProductService {
   List<String> getDistinctValues(String value);
 
   List<Product> findNewestByAll(String demographic, String category, String type);
+
+  Page<Product> searchProducts(String query, Integer pageNumber, Integer pageSize);
 }

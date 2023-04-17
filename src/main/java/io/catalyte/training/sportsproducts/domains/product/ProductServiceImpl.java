@@ -109,4 +109,16 @@ public class ProductServiceImpl implements ProductService {
         .limit(5)
         .collect(Collectors.toList());
   }
+
+  @Override
+  public Page<Product> searchProducts(String query, Integer pageNumber, Integer pageSize) {
+    Pageable pageRequest = PageRequest.of(pageNumber, pageSize);
+    try {
+      Page<Product> products = productRepository.searchProducts(query, pageRequest);
+      return products;
+    } catch (DataAccessException e) {
+      logger.error(e.getMessage());
+      throw new ServiceUnavailable();
+    }
+  }
 }

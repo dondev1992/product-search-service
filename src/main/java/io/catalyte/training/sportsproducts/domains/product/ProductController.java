@@ -45,4 +45,11 @@ public class ProductController {
     return new ResponseEntity<>(productService.findNewestByAll(demographic, category, type), HttpStatus.OK);
   }
 
+  @GetMapping("/search")
+  @ResponseStatus(value = HttpStatus.OK)
+  public ResponseEntity<Page<Product>> searchProducts(@RequestParam("query") String query,
+      @RequestParam Integer pageNumber, @RequestParam Integer pageSize){
+    return ResponseEntity.ok(productService.searchProducts(query, pageNumber, pageSize));
+  }
+
 }

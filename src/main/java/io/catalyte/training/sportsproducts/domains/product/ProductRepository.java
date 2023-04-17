@@ -23,4 +23,15 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
   List<String> findDistinctTypes();
 
   List<Product> findAll(Example<Product> productExample);
+
+  @Query("SELECT p FROM Product p WHERE " +
+          "p.name LIKE CONCAT('%',:query, '%')" +
+          "OR p.description LIKE CONCAT('%', :query, '%')" +
+          "OR p.demographic LIKE CONCAT('%',:query, '%')" +
+          "OR p.type LIKE CONCAT('%',:query, '%')" +
+          "OR p.category LIKE CONCAT('%',:query, '%')")
+  Page<Product> searchProducts(String query, Pageable page);
+
 }
+
+
